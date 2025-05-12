@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px;
+      gap: 30px;
+      justify-content: center;
+      align-content: center;
+      height: 100vh;
+    }
+
+    .box {
+      background-color: green;
+      width: 100px;
+      height: 100px;
+    }
+
+    /* Алхам 3: 600px-аас бага үед gap багасгана */
+    @media (max-width: 600px) {
+      .grid-container {
+        gap: 10px;
+      }
+    }
+
+    /* Алхам 4: 400px-аас бага үед grid-ийг 1 багана болгоно */
+    @media (max-width: 400px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        justify-items: center; /* Нэг баганад box-уудыг төвд байрлуулах */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>
